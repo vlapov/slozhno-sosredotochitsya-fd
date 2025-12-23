@@ -1,5 +1,319 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--page-font-family), sans-serif;
+  font-size: var(--page-font-size);
+  background-color: var(--page-background-color);
+  background-image: var(--page-cover), url(../images/cover-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header,
+.footer {
+  position: relative;
+  display: grid;
+  align-items: center;
+  padding: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.header {
+  grid-template-rows: 1fr min-content 1fr;
+  margin-block-end: 40px;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--header-accent-color);
+  border-block-start: 1px solid var(--header-accent-color);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--header-accent-color);
+  border-block-end: 1px solid var(--header-accent-color);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+}
+
+.header__rec-icon {
+  position: absolute;
+  display: var(--rec-icon-display);
+  color: var(--accent-color);
+  line-height: 25px;
+  text-transform: uppercase;
+  inset-inline-end: 38px;
+  inset-block-start: 10px;
+}
+
+.header__rec-icon::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  transform: translateY(-50%);
+  inline-size: 9px;
+  block-size: 9px;
+  inset-block-start: 50%;
+  inset-inline-start: 42px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  color: var(--header-accent-color);
+  font-size: var(--page-font-size);
+  line-height: 18px;
+  background-color: transparent;
+  cursor: pointer;
+  inline-size: 70px;
+  block-size: 26px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--header-menu-button-hover-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--header-accent-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--header-accent-color);
+  outline: none;
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header .section-title {
+  justify-self: end;
+  max-inline-size: 364px;
+}
+
+.main-title {
+  color: var(--main-title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+}
+
+.section-content {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.section-content:not(:last-child) {
+  margin-bottom: 49px;
+}
+
+.section-title {
+  color: var(--section-title-color);
+  font-weight: 700;
+  font-size: var(--page-font-size);
+  line-height: 23px;
+}
+
+.section-title_no-bold {
+  font-weight: normal;
+}
+
+.section-content .section-title {
+  margin-block-end: 20px;
+}
+
+.section-article .section-title {
+  margin-bottom: 9.6px;
+}
+
+.section-text {
+  margin-bottom: 20px;
+  color: var(--section-text);
+}
+
+.section-link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0px var(--accent-color);
+}
+
+.section-link:hover {
+  border-block-end: 1px solid var(--section-text);
+}
+
+.section-link:focus-visible {
+  outline: 1px solid var(--section-text);
+}
+
+.section-title_accented {
+  color: var(--section-title-accented-color);
+  background-color: var(--section-title-accented-background-color);
+}
+
+.gallery .section-title {
+  margin-block-end: 11px;
+}
+
+.gallery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery__list-item {
+  display: flex;
+}
+
+.footer {
+  margin-block-start: 41px;
+  text-align: center;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .header {
+    margin-block-end: 60px;
+    padding: 20px 20px 20px 0;
+  }
+
+  .header__rec-icon {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .main-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .section-content {
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+  }
+
+  .section-content:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  .section-content .section-title {
+    inline-size: 236px;
+  }
+
+  .section-article .section-title,
+  .gallery .section-title,
+  .how__list-container .section-title {
+    inline-size: 100%;
+  }
+
+  .why,
+  .what,
+  .how,
+  .gallery__list {
+    display: grid;
+  }
+
+  .why,
+  .how,
+  .gallery__list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .why__list,
+  .how__list-container {
+    grid-column: span 2;
+  }
+
+  .gallery .section-title {
+    margin-block-end: 20px;
+  }
+
+  .gallery__image-sunset {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .gallery__image-ice-cream {
+    grid-row: 1 / 3;
+  }
+
+  .gallery__image-tape {
+    grid-row: 2 / 4;
+  }
+
+  .gallery__image-street {
+    grid-column: 2 / 4;
+  }
+
+  .footer {
+    margin-block-start: 60px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-inline-start: 20px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header .section-title {
+    max-inline-size: 491px;
+  }
+
+  .section-content .section-title {
+    inline-size: 315px;
+  }
+
+  .section-article .section-title,
+  .gallery .section-title,
+  .how__list-container .section-title {
+    inline-size: 100%;
+  }
+
+  .what__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
 }
