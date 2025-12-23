@@ -6,7 +6,7 @@
   background-color: var(--page-background-color);
   background-image: var(--page-cover), url(../images/cover-image.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   background-attachment: fixed;
 }
