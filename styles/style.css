@@ -128,14 +128,14 @@
 }
 
 .section-content:not(:last-child) {
-  margin-bottom: 49px;
+  margin-block-end: 50px;
 }
 
 .section-title {
   color: var(--section-title-color);
   font-weight: 700;
   font-size: var(--page-font-size);
-  line-height: 23px;
+  line-height: 23.4px;
 }
 
 .section-title_no-bold {
@@ -147,12 +147,13 @@
 }
 
 .section-article .section-title {
-  margin-bottom: 9.6px;
+  margin-block-end: 10px;
 }
 
 .section-text {
-  margin-bottom: 20px;
+  margin-block-end: 20px;
   color: var(--section-text);
+  line-height: 23.4px;
 }
 
 .section-link {
@@ -174,7 +175,7 @@
 }
 
 .gallery .section-title {
-  margin-block-end: 11px;
+  margin-block-end: 10px;
 }
 
 .gallery__list {
@@ -188,7 +189,7 @@
 }
 
 .footer {
-  margin-block-start: 41px;
+  margin-block-start: 40px;
   text-align: center;
 }
 
@@ -197,6 +198,11 @@
 }
 
 @media (width >= 768px) {
+  .header,
+  .footer {
+    min-block-size: 1024px;
+  }
+
   .header {
     margin-block-end: 60px;
     padding: 20px 20px 20px 0;
@@ -286,6 +292,11 @@
 }
 
 @media (width >= 1024px) {
+  .header,
+  .footer {
+    min-block-size: 768px;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
