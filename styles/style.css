@@ -229,6 +229,7 @@
   }
 
   .section-content {
+    display: grid;
     padding-inline-start: 20px;
     padding-inline-end: 20px;
   }
@@ -245,10 +246,6 @@
   .gallery .section-title,
   .list-container_altered .section-title {
     inline-size: 100%;
-  }
-
-  .section-content {
-    display: grid;
   }
 
   .gallery__list {
