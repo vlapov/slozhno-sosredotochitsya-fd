@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: var(--page-font-family), sans-serif;
+  font-family: var(--page-font-family), monospace;
   font-size: var(--page-font-size);
   background-color: var(--page-background-color);
   background-image: var(--page-cover);
@@ -86,6 +86,7 @@
   color: var(--header-accent-color);
   font-size: var(--page-font-size);
   line-height: 18px;
+  text-transform: lowercase;
   background-color: transparent;
   cursor: pointer;
   inline-size: 70px;
@@ -158,7 +159,7 @@
 
 .section-link {
   text-decoration: none;
-  text-shadow: 2px 1px 0px var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .section-link:hover {
@@ -242,26 +243,24 @@
 
   .section-article .section-title,
   .gallery .section-title,
-  .how__list-container .section-title {
+  .list-container_altered .section-title {
     inline-size: 100%;
   }
 
-  .why,
-  .what,
-  .how,
+  .section-content {
+    display: grid;
+  }
+
   .gallery__list {
     display: grid;
   }
 
-  .why,
-  .how,
-  .gallery__list {
+  .section-content_altered {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
 
-  .why__list,
-  .how__list-container {
+  .list-container_altered {
     grid-column: span 2;
   }
 
@@ -318,7 +317,7 @@
 
   .section-article .section-title,
   .gallery .section-title,
-  .how__list-container .section-title {
+  .list-container_altered .section-title {
     inline-size: 100%;
   }
 
